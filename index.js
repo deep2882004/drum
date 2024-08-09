@@ -9,7 +9,7 @@ function deep() {
   var playSong = this.innerHTML;
 
   playsong1(playSong);
-  
+  animation(playSong);
   
  
 
@@ -20,6 +20,7 @@ function deep() {
 
 document.addEventListener("keypress", function(event){
   playsong1(event.key);
+  animation(event.key);
 })
 
 function playsong1(key){
@@ -66,4 +67,14 @@ function playsong1(key){
 
 
 }
+}
+
+function animation(animationKey){
+  var active = document.querySelector("."+animationKey);
+  active.classList.add("pressed");
+  setTimeout(function(){
+   active.classList.remove("pressed");},50)
+
+
+
 }
